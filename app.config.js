@@ -1,5 +1,5 @@
-{
-  "expo": {
+module.exports = {
+  expo: {
     "name": "my-app",
     "slug": "my-app",
     "version": "1.0.0",
@@ -8,6 +8,10 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+     extra: {
+      DB_API_KEY: process.env.DB_API_KEY,
+      PROJECT_ID: process.env.PROJECT_ID
+    },
     "ios": {
       "supportsTablet": true
     },
@@ -20,10 +24,9 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
-    },
+    },   
     "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+       "bundler": "metro"
     },
     "plugins": [
       "expo-router",
@@ -40,6 +43,7 @@
         }
       ]
     ],
+    
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
